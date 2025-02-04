@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ödemiş'te güvenilir ve hızlı taksi hizmeti. Ödemiş Taksi, Ödemiş Çağrı Taksi, Ödemiş Hakan Acun Taksi, Acil Ödemiş Taksi ile 7/24 hizmetinizdeyiz.">
+    <meta name="keywords" content="ödemiş taksi, ödemiş çağrı taksi, ödemiş hakan acun taksi, acil ödemiş taksi, taksi ödemiş, ödemiş taksici, ödemiş taksi telefon">
+    <meta name="author" content="Ödemiş Taksi Hizmetleri">
+    <title>Ödemiş Taksi - 7/24 Güvenilir Taksi Hizmeti</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: #222 !important;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffc107 !important;
+        }
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important;
+        }
+        .btn-primary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #000;
+        }
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #ffc107;
+        }
+        .footer a:hover {
+            color: #e0a800;
+        }
+        .taksi-card {
+            border: none; /* Border kaldırıldı */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .taksi-card:hover {
+            transform: scale(1.03);
+        }
+        .taksi-card img {
+            /* Altın oranlı resimler için yükseklik ayarı (genişlik:yükseklik = 1.618:1) */
+            height: 0;
+            padding-bottom: 61.8%; /* %61.8 altın oran için */
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            display: block; /* Resmin görünmesi için eklendi */
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1521580/pexels-photo-1521580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            color: #ffc107;
+            padding: 200px 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-section h1, .hero-section p {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        #hizmetlerimiz {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+        #iletisim {
+            padding: 50px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        #iletisim h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        #iletisim p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        #iletisim ul {
+            list-style: none;
+            padding: 0;
+        }
+        #iletisim li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        #iletisim a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        #iletisim a:hover {
+            color: #ffc107;
+        }
+        .phone-icon {
+            color: #ffc107;
+            margin-right: 5px;
+        }
+        .footer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        .footer p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .footer .btn-emergency {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #000;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .footer .btn-emergency:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0; /* Daha az padding */
+                height: auto; /* Yükseklik otomatik */
+            }
+            .hero-section h1 {
+                font-size: 2.5rem; /* Başlık boyutu küçült */
+            }
+            .hero-section p {
+                font-size: 1.2rem; /* Paragraf boyutu küçült */
+            }
+            .taksi-card img {
+                height: 150px; /* Daha küçük resimler */
+            }
+            .footer h2 {
+                font-size: 2rem; /* Footer başlık boyutu küçült */
+            }
+            .footer p {
+                font-size: 1.2rem; /* Footer paragraf boyutu küçült */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ödemiş Taksi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hizmetlerimiz">Hizmetlerimiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#iletisim">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Ödemiş'te Güvenilir Taksi Hizmeti</h1>
+            <p class="lead">7/24 Hızlı ve Güvenilir Taksi Çağrı Hattı</p>
+            <a href="#iletisim" class="btn btn-primary btn-lg">Hemen Ara</a>
+        </div>
+    </section>
+
+    <!-- Hizmetlerimiz Section -->
+    <section id="hizmetlerimiz" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Hizmetlerimiz</h2>
+            <div class="row">
+                <!-- Ödemiş Taksi -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card taksi-card">
+                        <img src="https://images.pexels.com/photos/2447531/pexels-photo-2447531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ödemiş Taksi" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Ödemiş Taksi</h5>
+                            <p class="card-text"><i class="fas fa-phone phone-icon"></i><a href="tel:05432929149">0543 292 9149</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ödemiş Çağrı Taksi -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card taksi-card">
+                        <img src="https://images.pexels.com/photos/18118212/pexels-photo-18118212/free-photo-of-kent-sehir-arabalar-otomobiller.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ödemiş Çağrı Taksi" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Ödemiş Çağrı Taksi</h5>
+                            <p class="card-text"><i class="fas fa-phone phone-icon"></i><a href="tel:05412929149">0541 292 9149</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ödemiş Hakan Acun Taksi -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card taksi-card">
+                        <img src="https://images.pexels.com/photos/15668878/pexels-photo-15668878/free-photo-of-kent-sehir-gece-sokak.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ödemiş Hakan Acun Taksi" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Ödemiş Hakan Acun Taksi</h5>
+                            <p class="card-text"><i class="fas fa-phone phone-icon"></i><a href="tel:05305814525">0530 581 4525</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Acil Ödemiş Taksi -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card taksi-card">
+                        <img src="https://images.pexels.com/photos/18434842/pexels-photo-18434842/free-photo-of-hindistan-kalkuta-da-sari-buyukelci-taksi.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Acil Ödemiş Taksi" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Acil Ödemiş Taksi</h5>
+                            <p class="card-text"><i class="fas fa-phone phone-icon"></i><a href="tel:05458311262">0545 831 1262</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Section -->
+    <section id="iletisim" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">İletişim</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <p class="text-center">Ödemiş'te taksi hizmeti için bizi arayın. 7/24 hizmetinizdeyiz.</p>
+                    <ul class="list-unstyled text-center">
+                        <li><i class="fas fa-phone phone-icon"></i><strong>Ödemiş Taksi:</strong> <a href="tel:05432929149">0543 292 9149</a></li>
+                        <li><i class="fas fa-phone phone-icon"></i><strong>Ödemiş Çağrı Taksi:</strong> <a href="tel:05412929149">0541 292 9149</a></li>
+                        <li><i class="fas fa-phone phone-icon"></i><strong>Ödemiş Hakan Acun Taksi:</strong> <a href="tel:05305814525">0530 581 4525</a></li>
+                        <li><i class="fas fa-phone phone-icon"></i><strong>Acil Ödemiş Taksi:</strong> <a href="tel:05458311262">0545 831 1262</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2>ACİL TAKSİ</h2>
+            <p>Acil taksiye mi ihtiyacınız var?</p>
+            <a href="tel:05458311262" class="btn-emergency">HEMEN ARAYIN</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
